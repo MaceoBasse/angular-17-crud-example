@@ -1,8 +1,10 @@
-// src/app/components/tutorials-list/tutorials-list.component.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 import { TutorialsListComponent } from './tutorials-list.component';
-import { TutorialService } from '../../services/tutorial.service'; // Assurez-vous que le chemin est correct
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { TutorialDetailsComponent } from '../tutorial-details/tutorial-details.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FormsModule } from '@angular/forms';
 
 describe('TutorialsListComponent', () => {
   let component: TutorialsListComponent;
@@ -10,9 +12,8 @@ describe('TutorialsListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [TutorialsListComponent],
-      imports: [HttpClientTestingModule], // Ajoutez HttpClientTestingModule ici
-      providers: [TutorialService], // Assurez-vous que TutorialService est fourni
+      declarations: [TutorialsListComponent, TutorialDetailsComponent],
+      imports: [HttpClientTestingModule, RouterTestingModule, FormsModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(TutorialsListComponent);
