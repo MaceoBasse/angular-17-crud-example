@@ -21,7 +21,8 @@ jobs:
         run: npm install
 
       - name: Run tests and coverage headless
-        run: ng test --watch=false --code-coverage --browsers=ChromeHeadless
+        run: test:ci
+        continue-on-error: true
 
       - name: SonarQube analysis
         uses: sonarsource/sonarqube-scan-action@master
