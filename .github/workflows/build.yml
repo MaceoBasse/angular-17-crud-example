@@ -21,8 +21,6 @@ jobs:
       - name: Run tests
         run: ng test --watch=false --browsers=ChromeHeadless
 
-      - name: SonarQube analysis
-        uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
